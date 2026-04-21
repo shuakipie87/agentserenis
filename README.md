@@ -1,6 +1,6 @@
 # Agent Serenis
 
-A production-grade multi-agent engineering team powered by Claude Code. 19 specialized AI agents that collaborate to build, ship, and scale software — from database schemas to pixel-perfect UIs to SEO-optimized marketing pages.
+A production-grade multi-agent engineering team powered by Claude Code. 20 specialized AI agents that collaborate to build, ship, and scale software — from database schemas to pixel-perfect UIs to SEO-optimized marketing pages, plus no-code automation on n8n and Make.com.
 
 ## Table of Contents
 
@@ -34,13 +34,13 @@ A production-grade multi-agent engineering team powered by Claude Code. 19 speci
 Agent Serenis is a multi-agent system built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Each agent is a specialized `.md` file that defines an agent's identity, expertise, reasoning protocols, code standards, and persistent memory — turning Claude into a domain expert for specific engineering tasks.
 
 **What makes this different:**
-- **19 specialized agents** covering the full software development lifecycle
+- **20 specialized agents** covering the full software development lifecycle
 - **Advanced prompt engineering** — Chain-of-Thought, Tree-of-Thought, ReAct, adversarial self-checks, confidence calibration
 - **Persistent memory** — agents learn and remember across conversations
 - **Collaboration protocols** — agents know how to hand off work and coordinate with each other
 - **Production-grade standards** — every agent enforces quality checklists, security practices, and performance targets
 
-**Total system size:** 6,100+ lines of specialized agent prompts across 19 agents.
+**Total system size:** 6,240+ lines of specialized agent prompts across 20 agents.
 
 ---
 
@@ -130,6 +130,7 @@ Agent Serenis is a multi-agent system built for [Claude Code](https://docs.anthr
 | **Vincent (Design Systems)** | Design systems engineer | `blue` | Design tokens, component libraries, theming, WCAG |
 | **Jah (Performance)** | Performance & animations | `red` | Bundle size, CWV, lazy loading, GPU animations |
 | **Sage (Technical Writer)** | Technical writer | `green` | API docs, README, changelogs, runbooks, guides |
+| **ShuakiPie (n8n Master)** | n8n & Make.com automation master | `orange` | n8n workflow JSON, Make.com scenarios, expressions, Code nodes, cross-platform translation |
 
 ### Growth Agents
 
@@ -255,6 +256,21 @@ Task → vincent-design-systems
 "Create Storybook documentation for the Button component variants"
 ```
 
+#### Automation (n8n / Make.com)
+```
+# Build an n8n workflow
+Task → shuakipie-n8n-master
+"Build an n8n workflow that watches a Google Sheet and posts new rows to Slack"
+
+# Debug a Make.com scenario
+Task → shuakipie-n8n-master
+"My Make.com Iterator is dropping bundles — trace the flow and fix the mapping"
+
+# Translate between platforms
+Task → shuakipie-n8n-master
+"Translate this n8n workflow to an equivalent Make.com scenario"
+```
+
 ### Launching Multiple Agents in Parallel
 
 For complex features, launch multiple agents simultaneously:
@@ -342,6 +358,7 @@ Task: subagent_type="shield-security-analyst", team_name="feature-checkout"
 │   ├── sage-technical-writer.md     # Technical writer
 │   ├── shield-security-analyst.md   # Security analyst
 │   ├── shuakipie-microservices.md   # Microservices architect
+│   ├── shuakipie-n8n-master.md      # n8n & Make.com automation master
 │   ├── vincent-design-systems.md    # Design systems engineer
 │   └── yam-fullstack-frontend.md    # Fullstack frontend engineer
 └── agent-memory/                    # Persistent memory (per-agent)
@@ -683,6 +700,22 @@ Technical writer for API docs, READMEs, changelogs, runbooks, and developer guid
 
 ---
 
+### ShuakiPie n8n Master (`shuakipie-n8n-master`)
+**Lines:** 142 | **Size:** 12KB | **Model:** Sonnet
+
+The automation-platform master. World-class expert on **n8n** (every node, every expression, every quirk) and **Make.com** (every module, router, aggregator, data-store pattern). Speaks both dialects fluently and translates between them without losing fidelity.
+
+**Key capabilities:**
+- Full n8n mastery — stock nodes, LangChain/AI nodes, integrations, expressions (`$json`, `$node`, `$now`), sub-workflows, error workflows, queue mode
+- Full Make.com mastery — bundles vs operations, routers, iterators, aggregators, data stores, error routes (Break/Resume/Commit/Rollback), scheduling
+- Cross-platform translation with honest flagging of lossy conversions (e.g., n8n Code node → Make.com)
+- Produces importable n8n workflow JSON and Make.com scenario blueprints that validate on first try
+- Proactive skill loading — uses `n8n-workflow-patterns`, `n8n-node-configuration`, `n8n-validation-expert`, `n8n-code-javascript`, `n8n-code-python`, `n8n-expression-syntax`, `n8n-mcp-tools-expert`
+
+**Operating protocol:** Infers platform from the user's vocabulary (module/scenario/bundle → Make.com; node/workflow/`$json` → n8n), asks once if ambiguous, never hands n8n syntax for a Make.com task or vice versa.
+
+---
+
 ## Collaboration Map
 
 Agents are designed to work together. Here's how they connect:
@@ -840,11 +873,11 @@ Claude Code has concurrency limits. Use Dendi to sequence tasks and manage paral
 
 | Metric | Value |
 |--------|-------|
-| Total agents | 19 |
-| Total lines of prompts | 6,100+ |
+| Total agents | 20 |
+| Total lines of prompts | 6,240+ |
 | Agents using Opus | 18 |
-| Agents using Sonnet | 1 |
-| Agents with persistent memory | 19/19 |
+| Agents using Sonnet | 2 |
+| Agents with persistent memory | 20/20 |
 | Prompt engineering techniques | 6 (CoT, ToT, ReAct, Adversarial, Confidence, Step-Back) |
 
 ---

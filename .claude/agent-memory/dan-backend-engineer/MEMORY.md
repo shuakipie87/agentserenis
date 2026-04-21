@@ -30,3 +30,7 @@ Pattern established in `database/statusAggregation.js` and now also in `database
 
 ### Date Parsing in Aggregation Pipelines
 MongoDB dates come in multiple formats: native Date objects, "YYYY-MM-DD" strings, "DD-MM-YYYY" strings, and ISO strings. Use `$switch` with `$type` check and `$regexMatch` branches, plus `$dateFromString` with `onError: null`.
+
+## Project: EvalsToGo (Supabase Edge Functions)
+
+- [ai-proxy generate-colors payload format](project_ai_proxy_payload.md) -- client sends pre-built Gemini `parts` array, not separate base64 fields

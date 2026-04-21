@@ -1,4 +1,4 @@
-# Yam Fullstack Frontend — Memory
+# Agentspec Compliance Auditor — Memory
 
 > Loaded at session start. Updated at session end. Keep under 300 lines — overflow to topic files.
 

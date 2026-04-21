@@ -1,4 +1,4 @@
-# Yam Fullstack Frontend — Memory
+# Typescript Pydantic Sync Checker — Memory
 
 > Loaded at session start. Updated at session end. Keep under 300 lines — overflow to topic files.
 
